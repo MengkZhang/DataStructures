@@ -11,7 +11,8 @@ public class ArrayQueueDemo {
         Scanner scanner = new Scanner(System.in);
 
         //输出一个菜单
-        while (true) {
+        boolean loop = true;
+        while (loop) {
             System.out.println("s(show):展示队列");
             System.out.println("e(exit):退出程序");
             System.out.println("a(add):添加数据到队列");
@@ -23,7 +24,8 @@ public class ArrayQueueDemo {
                     arrayQueue.showQueue();
                     break;
                 case 'e':
-                    System.exit(0);
+                    loop = false;
+                    scanner.close();
                     break;
                 case 'a':
                     System.out.println("请输入一个数");
@@ -52,6 +54,7 @@ public class ArrayQueueDemo {
                     break;
             }
         }
+        System.out.println("程序退出");
 
     }
 }
